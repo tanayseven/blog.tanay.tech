@@ -16,8 +16,6 @@ export default function Home() {
 
     const date = new Date(frontMatter.date);
 
-    // Format the date to a readable string format
-    // For example, "October 1, 2021"
     const formattedDate = date.toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
@@ -34,23 +32,15 @@ export default function Home() {
   return (
     <div>
       <div className="flex flex-col gap-8">
-        <h1 className="font-bold text-4xl">Next.js MDX Blog</h1>
+        <h1 className="font-bold text-4xl">Welcome to Tanay&apos;s Blog</h1>
         <div className="flex flex-col gap-2">
-          <p>A static blog built with Next.js and MDX</p>
+          <p>This Blog has just been migrated from a differnet tech stack, so looks very raw</p>
           <Link
             className="underline"
             target="_blank"
-            href="https://github.com/owolfdev/simple-mdx-blog"
+            href="https://github.com/tanayseven/blog.tanay.tech"
           >
             Get the code at Github. Installation instructions are in the README.
-          </Link>
-
-          <Link
-            className="underline"
-            target="_blank"
-            href="https://www.owolf.com/blog/simple-static-mdx-blog"
-          >
-            Learn more by reading a blog post about this app.
           </Link>
         </div>
 
