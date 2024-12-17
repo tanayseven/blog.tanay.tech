@@ -27,6 +27,10 @@ export default function Home() {
       formattedDate,
       meta: frontMatter,
     };
+  }).sort((a, b) => {
+    const dateA = new Date(a.formattedDate);
+    const dateB = new Date(b.formattedDate);
+    return dateB.getTime() - dateA.getTime();
   });
 
   return (
