@@ -13,8 +13,8 @@ const Navbar = () => {
 
           <div className="flex space-x-1 justify-self-end py-0.5">
             <Link href="/" className="text-xl px-2">Home</Link>
-            <Link href="/about" className="text-xl px-2">About me</Link>
-            <Link href="/projects" className="text-xl px-2">Projects</Link>
+            <Link href="/about/" className="text-xl px-2">About me</Link>
+            <Link href="/projects/" className="text-xl px-2">Projects</Link>
           </div>
         </div>
       </div>

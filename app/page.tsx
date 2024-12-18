@@ -54,7 +54,7 @@ export default function Home() {
           <ul className="flex flex-col gap-4">
             {blogs.map((blog) => (
               <li key={blog.slug} className="border px-3 py-2 rounded-xl">
-                <Link href={`/blog/${blog.slug}`}>
+                <Link href={`/blog/${blog.slug}/`}>
                   <h3 className="font-bold text-xl">{blog.meta.title}</h3>
                   <div>{blog.formattedDate}</div>
                   <div>{blog.meta.description}</div>
