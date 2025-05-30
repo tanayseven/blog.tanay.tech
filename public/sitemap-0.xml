@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://simple-mdx-blog.vercel.app/</loc><lastmod>2025-05-29T00:26:13.086Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://simple-mdx-blog.vercel.app/projects/</loc><lastmod>2025-05-29T00:26:13.087Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://simple-mdx-blog.vercel.app/about/</loc><lastmod>2025-05-29T00:26:13.087Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://simple-mdx-blog.vercel.app/blog/2016-03-27-hello-world/</loc><lastmod>2025-05-29T00:26:13.087Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://simple-mdx-blog.vercel.app/blog/2016-07-14-finally-an-android-app/</loc><lastmod>2025-05-29T00:26:13.087Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://simple-mdx-blog.vercel.app/blog/2016-07-18-at-nelkinda-coderetreat/</loc><lastmod>2025-05-29T00:26:13.087Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://simple-mdx-blog.vercel.app/blog/2018-01-03-sicp-challenge/</loc><lastmod>2025-05-29T00:26:13.087Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://simple-mdx-blog.vercel.app/blog/2018-09-18-scheme-crash-course/</loc><lastmod>2025-05-29T00:26:13.087Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://simple-mdx-blog.vercel.app/blog/2022-03-28-arch-linux-broken-kernel-patch/</loc><lastmod>2025-05-29T00:26:13.087Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://simple-mdx-blog.vercel.app/blog/2022-04-15-fix-broken-arch-linux-kernel-patch/</loc><lastmod>2025-05-29T00:26:13.087Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://simple-mdx-blog.vercel.app/blog/2022-05-09-your-passwords-are-not-stored-safely/</loc><lastmod>2025-05-29T00:26:13.087Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://simple-mdx-blog.vercel.app/blog/2022-07-01-password-management-setup/</loc><lastmod>2025-05-29T00:26:13.087Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://simple-mdx-blog.vercel.app/blog/2023-03-05-syncthing-multi-device-setup/</loc><lastmod>2025-05-29T00:26:13.087Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://simple-mdx-blog.vercel.app/</loc><lastmod>2025-05-30T00:26:23.659Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://simple-mdx-blog.vercel.app/projects/</loc><lastmod>2025-05-30T00:26:23.659Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://simple-mdx-blog.vercel.app/about/</loc><lastmod>2025-05-30T00:26:23.659Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://simple-mdx-blog.vercel.app/blog/2016-03-27-hello-world/</loc><lastmod>2025-05-30T00:26:23.659Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://simple-mdx-blog.vercel.app/blog/2016-07-14-finally-an-android-app/</loc><lastmod>2025-05-30T00:26:23.659Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://simple-mdx-blog.vercel.app/blog/2016-07-18-at-nelkinda-coderetreat/</loc><lastmod>2025-05-30T00:26:23.659Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://simple-mdx-blog.vercel.app/blog/2018-01-03-sicp-challenge/</loc><lastmod>2025-05-30T00:26:23.659Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://simple-mdx-blog.vercel.app/blog/2018-09-18-scheme-crash-course/</loc><lastmod>2025-05-30T00:26:23.659Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://simple-mdx-blog.vercel.app/blog/2022-03-28-arch-linux-broken-kernel-patch/</loc><lastmod>2025-05-30T00:26:23.659Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://simple-mdx-blog.vercel.app/blog/2022-04-15-fix-broken-arch-linux-kernel-patch/</loc><lastmod>2025-05-30T00:26:23.659Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://simple-mdx-blog.vercel.app/blog/2022-05-09-your-passwords-are-not-stored-safely/</loc><lastmod>2025-05-30T00:26:23.659Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://simple-mdx-blog.vercel.app/blog/2022-07-01-password-management-setup/</loc><lastmod>2025-05-30T00:26:23.659Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://simple-mdx-blog.vercel.app/blog/2023-03-05-syncthing-multi-device-setup/</loc><lastmod>2025-05-30T00:26:23.659Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
