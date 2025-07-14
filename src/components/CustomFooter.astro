@@ -1,0 +1,12 @@
+---
+import Default from '@astrojs/starlight/components/Footer.astro';
+---
+
+<footer>
+<Default>
+  <slot />
+</Default>
+<p class="text-center text-sm text-gray-500 dark:text-gray-400">
+  &copy; 2016 - {new Date().getFullYear()} Tanay PrabhuDesai. All rights reserved.
+</p>
+</footer>
