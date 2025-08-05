@@ -59,8 +59,6 @@ subtract(multiply(9, 9), 3, 5, 3)  # => 70
 add()  # => 0
 ```
 
-| 
-
 ``` {.scheme linenos=""}
 ; (1 + 2) * (5 - 3) / 9
 (/ (* (+ 1 2) (- 5 3)) 9)  ; => Value: 2/3
@@ -227,6 +225,13 @@ def length_of_list(lst, current_length=0):
 
 ``` scheme
 ; recursively iterating to get the length of the list
+(define (length-of-list lst current-length)
+  (if (null? lst)
+      current-length
+      (length-of-list (cdr lst) (+ current-length 1))))
+
+; usage example
+(length-of-list '(1 2 3 4 5) 0) ; => Value: 5
 ```
 
 # List: Concatenating two lists
@@ -239,7 +244,8 @@ def length_of_list(lst, current_length=0):
 ```
 
 ``` scheme
-; Simply concatenating two lists (cons)
+; Simply concatenating two lists (append)
+(append '(1 2 3 4) '(5 6 7)) ; => Value: (1 2 3 4 5 6 7)
 ```
 
 # List: Appending element to list
@@ -251,6 +257,7 @@ def length_of_list(lst, current_length=0):
 
 ``` scheme
 ; Simply appending element to list
+(append '(1 2 3 4 5) '(6)) ; => Value: (1 2 3 4 5 6)
 ```
 
 # List: Getting the first element in the list
@@ -260,7 +267,8 @@ def length_of_list(lst, current_length=0):
 ```
 
 ``` scheme
-; Some scheme code here
+; Getting the first element of the list
+(car '(1 2 3 4 5)) ; => Value: 1
 ```
 
 # List: Getting the rest in the list
@@ -270,7 +278,8 @@ def length_of_list(lst, current_length=0):
 ```
 
 ``` scheme
-; Some scheme code here
+; Getting the rest of the list after the first element
+(cdr '(1 2 3 4 5)) ; => Value: (2 3 4 5)
 ```
 
 # List: Reversing
@@ -286,9 +295,18 @@ list(reversed([1, 2, 3, 4, 5]))  # => [5, 4, 3, 2, 1]
 ```
 
 ``` scheme
-; recursively iterating to reverse the list (use car, cdr and cons)
+; recursively iterating to reverse the list
+(define (reverse-list lst new-lst)
+  (if (null? lst)
+      new-lst
+      (reverse-list (cdr lst) (cons (car lst) new-lst))))
+
+; usage
+(reverse-list '(1 2 3 4 5) '()) ; => Value: (5 4 3 2 1)
 
 ; Use the reverse function provided by the language
+(reverse '(1 2 3 4 5)) ; => Value: (5 4 3 2 1)
+
 ```
 
 # Compute factorial
@@ -301,7 +319,14 @@ def factorial(number, current_product=1):
 ```
 
 ``` scheme
-; some scheme code here
+; tail recursive factorial
+(define (factorial number current-product)
+  (if (= number 1)
+      current-product
+      (factorial (- number 1) (* current-product number))))
+
+; usage
+(factorial 5 1) ; => Value: 120
 ```
 
 # Compute fibonacci
@@ -314,7 +339,17 @@ def fibonacci(count, current_list=[], previous=0, current=1):
 ```
 
 ``` scheme
-; some scheme code here
+; helper function for tail-recursive fibonacci
+(define (fibonacci count current-list previous current)
+  (if (= (length current-list) count)
+      current-list
+      (fibonacci count
+                 (append current-list (list previous))
+                 current
+                 (+ previous current))))
+
+; usage
+(fibonacci 6 '() 0 1) ; => Value: (0 1 1 2 3 5)
 ```
 
 # Find element in the list
@@ -329,7 +364,14 @@ def search_element(lst, key, index=0):
 ```
 
 ``` scheme
-; some scheme code ehre
+(define (search-element lst key index)
+  (cond ((null? lst) #f)
+        ((= (car lst) key) index)
+        (else (search-element (cdr lst) key (+ index 1)))))
+
+; usage
+(search-element '(1 2 3 4 5) 4 0) ; => Value: 3
+(search-element '(1 2 3 4 5) 9 0) ; => Value: #f
 ```
 
 # Simple input and output
@@ -342,13 +384,23 @@ print("Enter your name: ")
 ```
 
 ``` scheme
-; some scheme code here
+; input an int and add 45 to it
+(+ (read) 45)
+
+; prompt and greet user
+(display "Enter your name: ")
+(define name (read))
+(string-append "Hello " name)
 ```
 
 # Writing tests
 
 ``` python
-# Some python code here
+# Python equivalent test using assert
+def expression():
+    return (1 + 2) * (5 - 3) / 9
+
+assert abs(expression() - (-37/150)) < 1e-9  # placeholder value from scheme test
 ```
 
 ``` scheme
