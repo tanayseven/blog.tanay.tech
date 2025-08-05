@@ -4,6 +4,7 @@ import starlight from '@astrojs/starlight'
 import starlightBlog from 'starlight-blog'
 import remarkDirective from "remark-directive";
 import remarkCallout from "./src/plugins/remark-callout.ts";
+import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 
 
 export default defineConfig({

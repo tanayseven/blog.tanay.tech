@@ -45,7 +45,7 @@ these arithematic operators in Python. After the Python block of the
 code the exact Scheme version of the same will be shown in the block
 below it.
 
-``` {.python linenos=""}
+```python
 # (1 + 2) * (5 - 3) / 9
 divide(multiply(add(1, 2), subtract(5, 3)), 9)  # => 0.666666666666666
 
@@ -59,7 +59,7 @@ subtract(multiply(9, 9), 3, 5, 3)  # => 70
 add()  # => 0
 ```
 
-``` {.scheme linenos=""}
+```scheme
 ; (1 + 2) * (5 - 3) / 9
 (/ (* (+ 1 2) (- 5 3)) 9)  ; => Value: 2/3
 
@@ -69,7 +69,7 @@ add()  # => 0
 ; 9 * 9 - 3 - 5 - 3
 (- (* 9 9) 3 5 3) ; => Value: 70
 
-# zero arguments
+; zero arguments
 (+)  # => 0
 ```
 
@@ -92,7 +92,7 @@ the arguments passed to that add function.
 
 # Variables
 
-``` python
+```python
 # define a variable MAX that holds 500
 > MAX = 500
 > MAX  # => 500
@@ -106,7 +106,7 @@ the arguments passed to that add function.
 > SUM  # => 9
 ```
 
-``` scheme
+```scheme
 ; define a variable MAX that holds 500
 > (define max 500)
 > max  ; => Value: 500
@@ -139,7 +139,7 @@ name, this is done for `sum` in the code snippet shown above.
 
 # Functions
 
-``` python
+```python
 # Lambda implementation of square function
 > square = lambda x: x * x
 > square(7)   #  => 49
@@ -150,7 +150,7 @@ name, this is done for `sum` in the code snippet shown above.
 > square(7)
 ```
 
-``` scheme
+```scheme
 ;  Lambda implementation of square function
 > (define square (lambda (x) (* x x)))
 > (square 7)  ;  => Value: 49
@@ -169,7 +169,7 @@ nothing but syntactic sugar for binding lambdas to name.
 
 # Taking a decision
 
-``` python
+```python
 # Old enough to drink string
 def old_enough(age):
     if age >= 18:
@@ -189,7 +189,7 @@ is_even(2)
 is_even(3)
 ```
 
-``` scheme
+```scheme
 ; old enough to drink string
 > (define (old-enough age)
 >          (if (>= age 18) "Yes" "No"))
@@ -215,7 +215,7 @@ expression evaluates to \<code\>lol\</code\>
 
 # List: Getting length
 
-``` python
+```python
 # Recursively iterating to get the length of the list
 def length_of_list(lst, current_length=0):
     if lst == []:
@@ -223,7 +223,7 @@ def length_of_list(lst, current_length=0):
     return length_of_list(lst[1:], current_length+1)
 ```
 
-``` scheme
+```scheme
 ; recursively iterating to get the length of the list
 (define (length-of-list lst current-length)
   (if (null? lst)
@@ -234,57 +234,75 @@ def length_of_list(lst, current_length=0):
 (length-of-list '(1 2 3 4 5) 0) ; => Value: 5
 ```
 
+The problem the above code solves is finding the length of the list that passed to the `length-of-list` function.
+In addition to that we are also introduced to recursion in the context of lists. Instead of using a built-in length
+function, we recursively traverse the list and count elements one by one. This helps build an intuition of how list
+iteration and base cases work in Scheme.
+
+
 # List: Concatenating two lists
 
-``` python
+```python
 # Simply concatenating two lists
 [1, 2, 3, 4] + [5, 6, 7]
 
 [1, 2, 3, 4, 5, 6, 7]
 ```
 
-``` scheme
+```scheme
 ; Simply concatenating two lists (append)
 (append '(1 2 3 4) '(5 6 7)) ; => Value: (1 2 3 4 5 6 7)
 ```
 
+Here, we see how to combine two lists into one. In Python, this is done with `+`, while in Scheme, we use the `append`
+function. This example above showcases Scheme's functional style where list operations are explicit and declarative.
+
 # List: Appending element to list
 
-``` python
+```python
 # Simply appending element to list
 [1, 2, 3, 4, 5].append(6)
 ```
 
-``` scheme
+```scheme
 ; Simply appending element to list
 (append '(1 2 3 4 5) '(6)) ; => Value: (1 2 3 4 5 6)
 ```
 
+Appending a single element in Scheme is also done using append, but the new element must be wrapped in a list using
+`(list x)` or `'(x)` because append expects lists. This emphasizes the distinction between atoms and lists in Scheme.
+
 # List: Getting the first element in the list
 
-``` python
+```python
 [1, 2, 3, 4, 5][0]
 ```
 
-``` scheme
+```scheme
 ; Getting the first element of the list
 (car '(1 2 3 4 5)) ; => Value: 1
 ```
 
+To access the first item of a list in Scheme, we use `car`. This mirrors Python’s list indexing with `[0]`. The function
+`car` stands for "contents of the address part of register"—a historical name from early LISP machines.
+
 # List: Getting the rest in the list
 
-``` python
+```python
 [1, 2, 3, 4, 5][1:]
 ```
 
-``` scheme
+```scheme
 ; Getting the rest of the list after the first element
 (cdr '(1 2 3 4 5)) ; => Value: (2 3 4 5)
 ```
 
+The counterpart to `car` is `cdr`, which returns the remainder of the list after removing the first element. This is
+similar to Python’s slicing: `lst[1:]`. These two functions are essential to understanding list processing in Scheme.
+
 # List: Reversing
 
-``` python
+```python
 # Recursively iterating to reverse the list
 def reverse_list(lst, new_lst=[]):
     if lst == []:
@@ -294,7 +312,7 @@ def reverse_list(lst, new_lst=[]):
 list(reversed([1, 2, 3, 4, 5]))  # => [5, 4, 3, 2, 1]
 ```
 
-``` scheme
+```scheme
 ; recursively iterating to reverse the list
 (define (reverse-list lst new-lst)
   (if (null? lst)
@@ -306,19 +324,22 @@ list(reversed([1, 2, 3, 4, 5]))  # => [5, 4, 3, 2, 1]
 
 ; Use the reverse function provided by the language
 (reverse '(1 2 3 4 5)) ; => Value: (5 4 3 2 1)
-
 ```
+
+This example demonstrates two ways to reverse a list: one with a custom recursive implementation and another using the
+built-in reverse function. The recursive approach reinforces how you can use `car`, `cdr`, and `cons` to build new
+lists.
 
 # Compute factorial
 
-``` python
+```python
 def factorial(number, current_product=1):
     if number == 1:
         return current_product
     return factorial(number-1, current_product * number)
 ```
 
-``` scheme
+```scheme
 ; tail recursive factorial
 (define (factorial number current-product)
   (if (= number 1)
@@ -329,16 +350,21 @@ def factorial(number, current_product=1):
 (factorial 5 1) ; => Value: 120
 ```
 
+Here, we implement a tail-recursive factorial function, which accumulates the product as we recurse down. This
+introduces the concept of tail recursion—a style of writing recursive functions where the recursive call is the last
+action performed.
+
+
 # Compute fibonacci
 
-``` python
+```python
 def fibonacci(count, current_list=[], previous=0, current=1):
     if len(current_list) == count:
         return current_list
     return fibonacci(count, current_list.append(previous), previous=current, current=previous+current)
 ```
 
-``` scheme
+```scheme
 ; helper function for tail-recursive fibonacci
 (define (fibonacci count current-list previous current)
   (if (= (length current-list) count)
@@ -352,9 +378,14 @@ def fibonacci(count, current_list=[], previous=0, current=1):
 (fibonacci 6 '() 0 1) ; => Value: (0 1 1 2 3 5)
 ```
 
+Fibonacci in this case is implemented using tail recursion with an accumulator list. The function progressively builds
+up the list of numbers, giving a more efficient version compared to naive recursive implementations. It's a great
+example of functional iteration.
+
+
 # Find element in the list
 
-``` python
+```python
 def search_element(lst, key, index=0):
     if index == len(lst):
         return None
@@ -363,7 +394,7 @@ def search_element(lst, key, index=0):
     return search_element(lst, key, index+1)
 ```
 
-``` scheme
+```scheme
 (define (search-element lst key index)
   (cond ((null? lst) #f)
         ((= (car lst) key) index)
@@ -374,16 +405,19 @@ def search_element(lst, key, index=0):
 (search-element '(1 2 3 4 5) 9 0) ; => Value: #f
 ```
 
+This recursive function searches for an element in a list and returns its index. It demonstrates how to use `cond` for
+branching and how to perform comparisons and recursive traversal using `car` and `cdr`.
+
 # Simple input and output
 
-``` python
+```python
 int(input()) + 45 # input an int and add 45 to it
 
 print("Enter your name: ")
 "Hello " + input() # output a prompt and take string input name and say hello
 ```
 
-``` scheme
+```scheme
 ; input an int and add 45 to it
 (+ (read) 45)
 
@@ -393,9 +427,13 @@ print("Enter your name: ")
 (string-append "Hello " name)
 ```
 
+This section shows how to take user input and produce output in Scheme. We use `(read)` for input and `(display)` to
+print prompts. `string-append` is used to combine strings, mimicking Python's `input()` and string concatenation (`+`)
+behavior.
+
 # Writing tests
 
-``` python
+```python
 # Python equivalent test using assert
 def expression():
     return (1 + 2) * (5 - 3) / 9
@@ -403,7 +441,7 @@ def expression():
 assert abs(expression() - (-37/150)) < 1e-9  # placeholder value from scheme test
 ```
 
-``` scheme
+```scheme
 (load "test-manager/load.scm")
 (load "src/ex_1.2.scm")
 
@@ -413,6 +451,10 @@ assert abs(expression() - (-37/150)) < 1e-9  # placeholder value from scheme tes
      (assert-= (expression) -37/150)))
 (run-registered-tests)
 ```
+
+Testing in Scheme uses a test framework loaded via `(load "test-manager/load.scm")`. This section shows how to write
+unit tests using `define-test` and `assert-=`, helping you build testable Scheme programs, which is especially useful
+when working through SICP exercises.
 
 <script src="https://giscus.app/client.js"
     data-repo="tanayseven/tanayseven.github.io"
