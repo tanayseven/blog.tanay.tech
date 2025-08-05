@@ -5,6 +5,7 @@ import starlightBlog from 'starlight-blog'
 import remarkDirective from "remark-directive";
 import remarkCallout from "./src/plugins/remark-callout.ts";
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
+import expressiveCode from 'astro-expressive-code';
 
 
 export default defineConfig({
@@ -13,6 +14,9 @@ export default defineConfig({
 		remarkPlugins: [remarkDirective, remarkCallout],
 	},
 	integrations: [
+        expressiveCode({
+            plugins: [pluginLineNumbers()],
+        }),
 		starlight({
 			title: "Tanay Rambles",
 			favicon: '/favicon.ico',
