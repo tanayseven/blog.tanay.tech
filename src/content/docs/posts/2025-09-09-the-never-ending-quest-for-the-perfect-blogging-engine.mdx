@@ -1,0 +1,96 @@
+---
+title: The Never-Ending Quest for the Perfect Blogging Engine
+tags: ["linux", "blog", "blogging engine", "astro", "javascript", "npm", "make", "static site generation"]
+category: Blogging
+date: 2025-09-06
+author: tanay
+excerpt: |
+        There’s an ongoing debate in the software engineering world: why do so many engineers—especially hobbyists and tinkerers—insist on building their own blogging engines? It seems almost inevitable. And yes, I too fell headfirst into that rabbit hole, encountering every problem that countless others before me had already endured.
+        ![Re-inventing the blogging engine (again and again)](/post/re-inventing-the-blogging-engine.png)
+---
+
+## Intro
+
+There’s an ongoing debate in the software engineering world: why do so many engineers—especially hobbyists and tinkerers—insist on building their own blogging engines? It seems almost inevitable. And yes, I too fell headfirst into that rabbit hole, encountering every problem that countless others before me had already endured.
+
+![Re-inventing the blogging engine (again and again)](/post/re-inventing-the-blogging-engine.png)
+
+## My Introduction to Static Site Generation
+
+My journey started back in 2016, when I was pursuing my MTech in Computer Science and Engineering at [MIT, Manipal](https://www.manipal.edu/mit.html). Like many students at the time, I experimented with popular tools such as [Blogger](https://www.blogger.com/) and [WordPress](https://wordpress.org/). That’s when I discovered static site generation.
+
+GitHub was offering free builds and deployments for Jekyll, so I decided and spun up my very own `site—tanayseven.github.io` a [GitHub pages](https://docs.github.com/en/pages) feature. Seeing a personal website live on the internet, generated from Markdown, felt magical. Compared to Blogger or WordPress, this was a game-changer: faster, simpler, and refreshingly lightweight.
+
+After graduation, I joined a startup called [Nelkinda](https://nelkinda.com/), where I got a closer look at how their website was built. Until then, I was fully convinced that Jekyll was the best solution. But Nelkinda’s approach made me realize something deeper: the most efficient way to write a website is to generate static HTML from another text based format. Esp. if you're a programmer or someone who writes code.
+
+## Nelkinda’s Blogging Engine
+
+At Nelkinda, I contributed to the company website and picked up some amazing development practices. But what fascinated me most was their website pipeline. The system used XML and XSLT to generate XHTML pages, orchestrated with Makefiles.
+
+It was unapologetically [Unix-y](https://en.wikipedia.org/wiki/Unix-like). [ImageMagick](https://imagemagick.org/) scaled and cropped images, while shell scripts glued the whole process together. It was a perfect demonstration of how powerful the Linux shell can be when used creatively.
+
+Around the same time, I also stumbled upon [Alice Maz’s website](https://www.alicemaz.com/). Built with pure shell scripts, Makefiles, and m4 templates, it was so elegantly engineered that nothing else I had seen came close to Unix-y-ness. Between Nelkinda and Alice Maz, I was inspired to dive even deeper into creating my own custom blogging engine.
+
+## My Own Custom Blogging Engine
+
+### Use of Python and Jinja2
+
+Armed with inspiration, I set out to build my own. Instead of XML and XSLT, I used [Python](https://www.python.org/) with [Jinja2](https://jinja.palletsprojects.com/en/stable/) templates. Along the way, I discovered [Frozen-Flask](https://frozen-flask.readthedocs.io/en/latest/), which promised to convert a [Flask](https://palletsprojects.com/projects/flask/) app into a static site.
+
+The results were… less than spectacular. While the system worked, it left large gaps in functionality. I also found myself writing code for problems that had already been solved elsewhere, which meant I now had to maintain a lot of unnecessary complexity. One of my biggest pet peeves was writing CSS which took a huge toll on my pace of implementation. Ultimately making it difficult to complete the blogging engine in a short enough timespan.
+
+### Reinventing the Wheel
+
+This is the catch with custom implementations. When you start from scratch, you inevitably [reinvent the wheel](https://en.wikipedia.org/wiki/Reinventing_the_wheel). Sure, it feels fun and challenging at first—but eventually, it becomes exhausting.
+
+The reality is that very few existing tools will perfectly match your exact needs for a blogging engine. This makes it tempting to build everything yourself, while underestimating just how massive a project that really is. The trick, I realized, is to strike a balance between customizability and leveraging pre-made tools.
+
+## Moving Back to Auto-Generators
+
+So, I went back to auto-generators and explored [JAM stack](https://jamstack.org/) options like [Hugo](https://gohugo.io/), [Pelican](https://getpelican.com/), and [Gatsby](https://www.gatsbyjs.com/). All of them were solid and produced beautiful Markdown or Markdown-ish powered sites and blogging engines.
+
+But once again, they lacked the one feature I craved most: fully customizable blocks within documents. I tried simple blogs with each tool, but none of them offered the flexibility I was looking for.
+
+### A Dive into Sphinx and RST
+
+Next, I explored [Sphinx](https://www.sphinx-doc.org/en/master/) and its [reStructuredText (RST)](https://docutils.sourceforge.io/rst.html) format. Sphinx compiled RST beautifully, and it allowed me to add custom elements to my blog. But RST itself was a nightmare—strict, unforgiving, and far too pedantic about indentation.
+
+Yes, it gave me power of customizability and creating custom Sphinx directives. But it also made writing and editing posts unnecessarily complicated.
+
+### The Introduction of MyST
+
+That’s when I found [MyST](https://myst-parser.readthedocs.io/en/latest/), a Markdown parser for Sphinx. It promised the best of both worlds: RST’s flexibility with Markdown’s simplicity.
+
+It looked great on paper, but in practice, it still wasn’t customizable enough. For example, adding something interactive—like a button to run code snippets—was far too painful. I ended up digging into Sphinx’s internals, writing ugly, extensions that I’d be embarrassed to show anyone. What made writing the extensions for Sphinx harder was the lack of documentation which forced be to dig into Sphinx's internals in the first place. Don't get me wrong Sphinx is an amazing project, but it was good that I had come to the realisation that it was not for me.
+
+## Enter the JS/NPM Ecosystem
+
+Eventually, I wandered into the JavaScript ecosystem and gave [Next.js](https://nextjs.org/) a try. At the time, it was among the most popular choice for static site generation.
+
+And while it was powerful, it also felt unnecessarily heavy. Suddenly I was writing React components inside Markdown, which defeated the whole point of using Markdown in the first place. All I wanted was something simple, out-of-the-box, and Markdown-first. It did allow custom directives in Markdown but even that was way too complicated. Being a fan of things which are simple and easy, I realised that Next.js just wasn’t it.
+
+## Finally Ending Up with Astro
+
+Then came [Astro](https://astro.build/), which had also been generating a lot of buzz. I decided to give it a try, and right from the official tutorial, aaaand I was hooked. The very first example was building a blog directly from Markdown files.
+
+This was exactly what I had been looking for all along. Astro wasn’t limited to blogs; it could handle any kind of static site generation—but it nailed the blogging use case perfectly.
+
+Even better, it supported custom directives written in Markdown, which gave me the flexibility I’d always wanted without resorting to hacks.
+
+And that brings us here: the blog you’re reading now, built with Astro, finally! Although not necessarily the way I had imagined my ideal blogging engine to be like, but exactly what I wanted it to be like considering teh tradeoffs.
+
+<script src="https://giscus.app/client.js"
+        data-repo="tanayseven/tanayseven.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyOTAyNjM1OA=="
+        data-category="General"
+        data-category-id="DIC_kwDOAbroNs4COT7e"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="dark"
+        data-lang="en"
+        data-loading="lazy"
+        crossOrigin="anonymous"
+        async>
+</script>
