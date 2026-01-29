@@ -37,10 +37,12 @@ jobs:
 
     - name: Configure AWS Credentials OIDC login
       uses: aws-actions/configure-aws-credentials@v4
+      if: ${{ github.ref == 'refs/heads/main' }}
       with:
         role-to-assume: 'arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/github-actions-for-blog.tanay.tech'
         aws-region: us-east-1
 
     - name: Deploy to S3
+      if: ${{ github.ref == 'refs/heads/main' }}
       run: |
         aws s3 sync --delete dist/ s3://blog.tanay.tech/
