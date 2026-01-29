@@ -1,55 +1,66 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-
   "extends": [
     "config:recommended",
     ":dependencyDashboard",
     ":semanticCommits",
     "group:allNonMajor"
   ],
-
-  "labels": ["dependencies", "node", "renovate"],
-
+  "labels": [
+    "dependencies",
+    "node",
+    "renovate"
+  ],
   "timezone": "Asia/Kolkata",
-  "schedule": ["before 6am"],
-
+  "schedule": [
+    "before 6am"
+  ],
   "commitMessagePrefix": "chore(deps):",
-
-  "enabledManagers": ["npm"],
-
+  "enabledManagers": [
+    "npm"
+  ],
   "rangeStrategy": "auto",
-
   "prConcurrentLimit": 3,
   "prHourlyLimit": 1,
-
   "packageRules": [
     {
       "description": "Auto-merge patch updates",
-      "matchUpdateTypes": ["patch"],
+      "matchUpdateTypes": [
+        "patch"
+      ],
       "automerge": true
     },
     {
       "description": "Auto-merge minor updates",
-      "matchUpdateTypes": ["minor"],
+      "matchUpdateTypes": [
+        "minor"
+      ],
       "automerge": true
     },
     {
       "description": "Never auto-merge major updates",
-      "matchUpdateTypes": ["major"],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "automerge": false
     },
     {
       "description": "Group devDependencies",
-      "matchDepTypes": ["devDependencies"],
+      "matchDepTypes": [
+        "devDependencies"
+      ],
       "groupName": "devDependencies"
     },
     {
       "description": "Do not auto-merge tooling",
-      "matchPackagePatterns": ["eslint", "prettier", "typescript"],
-      "automerge": false
+      "automerge": false,
+      "matchPackageNames": [
+        "/eslint/",
+        "/prettier/",
+        "/typescript/"
+      ]
     }
   ],
-
   "ignoreDeps": [
     "npm"
   ]
