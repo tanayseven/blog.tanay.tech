@@ -1,10 +1,15 @@
-# Tanay's personal website
+# Tanay's personal blog
 
 A personal blog and portfolio website built with Astro and Starlight, featuring technical articles, project showcases, and personal musings about software engineering, data science, and technology.
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
-[![Astro](https://img.shields.io/badge/Astro-5.6.1-FF5D01?logo=astro&logoColor=white)](https://astro.build)
-[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/small.svg)](https://starlight.astro.build)
+[![Astro](https://img.shields.io/badge/Astro-5.6.1-FF5D01?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Amazon S3](https://img.shields.io/badge/Amazon%20S3-FF9900?style=for-the-badge&logo=amazons3&logoColor=white)](https://aws.amazon.com/s3/)
+[![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)](https://www.markdownguide.org/)
+[![GitHub License](https://img.shields.io/github/license/tanayseven/my-projects?style=for-the-badge&)](https://github.com/tanayseven/my-projects/blob/main/LICENSE)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/tanayseven/blog.tanay.tech/node.js.yml?branch=main&style=for-the-badge&label=CI)](https://github.com/tanayseven/blog.tanay.tech/actions)
+[![Website](https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2Ftanay.tech&up_message=online&down_message=offline)](https://tanay.tech)
 
 ## Project Structure
 
