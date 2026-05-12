@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.38.0",
+    "@astrojs/starlight": "^0.39.0",
     "@expressive-code/plugin-line-numbers": "^0.42.0",
     "astro": "^6.0.0",
     "astro-expressive-code": "^0.42.0",
