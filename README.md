@@ -55,7 +55,7 @@ A personal blog and portfolio website built with Astro and Starlight, featuring 
 
 ### Prerequisites
 
-- Node.js (version specified in `.nvmrc`)
+- [mise](https://mise.jdx.dev/) — installs the correct Node.js version automatically from `mise.toml`
 - npm or your preferred package manager
 
 ### Installation
@@ -66,7 +66,12 @@ A personal blog and portfolio website built with Astro and Starlight, featuring 
    cd blog.tanay.tech
    ```
 
-2. Install dependencies:
+2. Install the Node.js version via mise:
+   ```bash
+   mise install
+   ```
+
+3. Install dependencies:
    ```bash
    npm install
    ```
