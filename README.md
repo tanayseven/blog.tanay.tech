@@ -9,7 +9,7 @@ A personal blog and portfolio website built with Astro and Starlight, featuring 
 [![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)](https://www.markdownguide.org/)
 [![GitHub License](https://img.shields.io/github/license/tanayseven/my-projects?style=for-the-badge&)](https://github.com/tanayseven/my-projects/blob/main/LICENSE)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/tanayseven/blog.tanay.tech/node.js.yml?branch=main&style=for-the-badge&label=CI)](https://github.com/tanayseven/blog.tanay.tech/actions)
-[![Website](https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2Ftanay.tech&up_message=online&down_message=offline)](https://tanay.tech)
+[![Website](https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2Fblog.tanay.tech&up_message=online&down_message=offline)](https://blog.tanay.tech)
 
 ## Project Structure
 
