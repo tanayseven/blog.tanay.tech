@@ -1,0 +1,145 @@
+---
+title: "My Predictions on AI: The Hype, the Fear, and Everything In Between"
+date: 2026-07-31
+author: tanay
+cover:
+    alt: My predictions on AI
+    image: ../../../../public/post/predictions-of-ai.png
+---
+
+# My Predictions on AI: The Hype, the Fear, and Everything In Between
+
+A lot has been changing lately, and everyone on the internet has been generously throwing around their opinions and predictions. Since this blog is *my* corner of the internet, I figured it's my turn to throw some of mine.
+
+There are two camps out there: people chasing every shiny new AI tool the moment it appears, and people who flatly refuse to touch anything with "AI" in its name. My bet? Eventually everyone, even folks in non-IT engineering fields, will be nudged (or shoved) into using AI just to survive in their field.
+
+## Where I'm Coming From
+
+I've worked across a fairly wide range of IT engineering: web, front-end, back-end, mobile, DevOps, a bit of hardware programming, automation tooling, and data engineering. From that vantage point, I strongly feel AI has massively disrupted the way we write code. And by "code" I don't just mean programs; config files and documentation too. This disruption is at the same level as the introduction of the web itself. And AI doesn't stop there; it goes well beyond.
+
+> "People always say that 99% of their code is written by AI, but the same bunch of people won't say that 100% of their code is written by compilers." - Linus Torvalds
+
+I think what he means by comparing AI to compilers is simple: treat AI like a compiler. It's a tool, nothing more, nothing less.
+
+## My High-Level Predictions
+
+**AI won't replace farmers or accountants.** Just like spreadsheets didn't replace accountants, AI won't replace the roles it augments. The tool changes the *work*, not the *worker*. That said, the way we work does change, and it changes drastically when disruptions of this scale arrive. There will be layoffs and restructuring of all shapes and sizes across companies. People **will** lose jobs, especially those who blatantly refuse to change.
+
+**2026 is the most important year in your career.** Over six months have passed; less than six remain. The AI shift is happening *now*, and how engineers adapt this year will define their trajectory. The window to get ahead of it is open right now: learning new things, rapidly chasing the important concepts, and closely watching industry trends is what matters most. And as engineers, we'll have to keep watching trends come and go until this whole GenAI revolution stabilises.
+
+## My Encounter with the AI Disruption
+
+It was around July 2025 when I was tired and wanted a break from work, so I took a sabbatical through August and September. When I came back, the world had turned upside down; suddenly there was a massive buffet of tools that would write, modify, and manipulate the very code you were writing. Two months. That's all it took.
+
+## What Exactly Is Changing (At a Fundamental Level)
+
+One of the most important shifts: the fundamental knowledge needed for daily work has *increased*. Knowing the fundamentals matters more than before, not less. A lot of people claim anyone can now be an engineer without knowing the fundamentals; I'd argue the opposite is closer to the truth. But it's not just the knowledge; the daily work of a software engineer has changed at a fundamental level too.
+
+That's the uncomfortable part: the very grind AI is removing (debugging, reading docs, reading code) is also how engineers used to build the fundamentals they now need more of. I don't know the alternative learning path for fundamentals yet.
+
+### Debugging
+
+The single most annoying part of programming (trawling through Stack Overflow, trial-and-error troubleshooting, sometimes spending *days* on the most trivial bugs) is largely gone. AI has almost entirely replaced the debugging grind, and it does so in the most automated way possible.
+
+### Faster, More Automated Code Writing
+
+Before AI, writing code was a real effort in translating your plan from paper to code, line by line. IDEs did some completion, but you still typed most of it yourself. Now, most of the code you expect is written by the AI, and it's often right, though far from always.
+
+### No More Documentation Deep-Dives
+
+The other big time sink was reading documentation for every library, tool, and language you touched. That constant back-and-forth between docs and code has mostly disappeared, and the speed gain is real, though it comes with a catch: you're now trusting the AI's read of the docs instead of your own, and it doesn't always know when those docs are stale.
+
+### Easier Planning and Next Steps (Diagrams as Code)
+
+It's not just writing code that's easier; planning is too. A simple to-do list becomes something the LLM can refer to as you move from planning to implementation. And the plan doesn't have to be text-only: with Diagrams as Code, you can generate system and high-level diagrams using tools like Mermaid, LikeC4, and PlantUML.
+
+### A Different Way to Automate (Example: JIRA)
+
+In one of my previous assignments, JIRA was wired up to the repository and CI/CD. Cards moved themselves: raise a PR and the card moves toward QA; tests pass and it moves further, deploying to pre-prod; PR approved and merged, and it heads to UAT, watching the prod deployment; smoke tests pass, and it lands in Done.
+
+Now that AI is mainstream, people hook up an LLM to JIRA via MCP, and it does far more. It can help you *choose* a ticket based on priority and readiness, assign it to you, move it from To-Do to In-Progress, and handle the rest of the automation above, all assisted and simplified by AI.
+
+### Automated Alert Monitoring and Support
+
+Teams running live systems constantly field support issues needing quick resolution. Many of these are common, repeating problems with well-known, often documented, solutions. Feed that knowledge to an LLM and it can serve pre-packaged answers to queries. Push it a bit further and you can give the AI power to actually apply fixes and post updates on the same thread where the issue was raised: a Slack thread, a support ticket lying somewhere.
+
+### Harness Engineering
+
+Some people have gone further still, down the route of Harness Engineering: loops that do almost everything automatically. You give the AI a large body of knowledge, combine it with the problem statement, and let it plan and implement, self-correcting in a loop with minimal human interference, the human merely steering the agent in the right direction. Personally, I don't think this is practical long-term, given how AI companies are doing on the cost-versus-profit front.
+
+## What's Making Things Hard
+
+### Vibe Coding (being blind to code)
+
+A lot of people go all-in on vibe coding (never looking at the code, just prompting the LLM and hoping for the best). With enough context, that's fine in the short term. But the human doing the prompting still needs a rough grasp of the code's structure and how it works. Not in depth; a bird's-eye view keeps you oriented day-to-day, but it's not the same as the depth that builds fundamentals over years.
+
+### AI-Written Code Is Hard to Review
+
+Code generated by AI is genuinely difficult to audit and verify, and the difficulty runs in every direction. Correctness: you can run the code, but that won't cover edge cases, so you end up asking the AI to write unit tests for as many edge cases as possible. It's a bit circular, leaning on the AI to check the AI, but it's the best tool we have short of a human reading every line. Security: the generated code could be subtly malicious. (More on the rules file backdoor attack below.)
+
+### Rules File Backdoor Attack
+
+A security vulnerability where malicious instructions are embedded in rules files (e.g. `.cursorrules`, `CLAUDE.md`) to manipulate AI coding assistants into producing compromised code.
+
+### Bad, Wrong, and Dead Documentation
+
+AI models trained on, or referencing, outdated, incorrect, or abandoned docs can confidently produce wrong outputs. A compounding risk when the code is *also* hard to review.
+
+### Hallucinations
+
+AI has a tendency to hallucinate and be confidently wrong, and not just slightly wrong, but sometimes asserting the exact opposite of the truth with total conviction.
+
+That said, hallucinations have been trending down recently, mainly thanks to improved models and much wider context windows. More context means the model has to lean less on guesswork and more on what's actually in front of it, which cuts down on confidently wrong answers.
+
+## How It Should Be Done
+
+### Human in the Loop
+
+We still need a human in the loop. It may *look* like computers are doing all the work for us, but it's rarely that straightforward. The wider and deeper the software goes, the more complex, exponentially so, it becomes to comprehend and reason about, even for the best LLMs.
+
+There's also the junior engineer pipeline problem. If AI is doing most of the junior-level work, where do senior engineers come from in ten years? Seniority isn't a title you're handed; it's built by grinding through the grunt work, making mistakes, and slowly internalising the fundamentals. Skip that stage industry-wide and you skip the people who'd otherwise grow into the engineers capable of reviewing and steering the AI in the first place.
+
+### AI-Assisted Reading
+
+Reading code manually, file by file, is now outdated. I almost never do it. When I need to understand a piece of code, I ask the AI to read and explain it. Too complex? I ask it to dumb it down further, or draw me diagrams via Diagrams as Code. Yes, I'm trusting the same model to explain the code that might have written it wrong in the first place, but the alternative, reading everything myself line by line, doesn't scale anymore.
+
+### Learning Driven by AI
+
+Something I use heavily: AI-driven learning. This works for any concept, tool, or technology, not just tech or AI. Ask the AI to explain a concept, keep asking it to simplify, and have it point you to actual resources you can follow up on to verify it isn't telling you something wrong.
+
+## A Few More Observations
+
+### The Software Industry Adopted AI Voluntarily
+
+Unlike most other industries that were forced to pivot to LLMs, software embraced AI on its own terms. Many other fields, the arts especially, remain largely against AI, since there's an element of plagiarism in models trained on existing human-created work.
+
+### Writing Code Is Far Quicker Than Delivering to the End User
+
+AI accelerates code generation, but the bottleneck is everything else: testing, review, deployment, coordination. Speed of writing ≠ speed of delivery.
+
+### The Economics Are Genuinely Alarming
+
+Major AI companies are currently operating at significant losses, with infrastructure costs far outpacing revenue. OpenAI reportedly expects around $488 billion in spending between 2024 and 2029 against $345 billion in revenue: cumulative losses of roughly $140 billion. Audited financials reported by independent outlets and verified by the Financial Times put OpenAI's 2025 net loss at around $38.5 billion. xAI posted an operating loss of $6.4 billion in 2025 on just $3.2 billion in revenue, per SpaceX's IPO filing. Anthropic reportedly burned $5.6 billion in one recent year, though it expects to stop burning cash by 2027. Whichever way you slice it, the industry is spending money at a pace that would make even the dot-com era blush.
+
+## So, What Happens Next?
+
+This is what I think will happen because of AI. The scale might be at the same level as the dot-com boom, and there might well be a bubble burst, just like the dot-com bubble. The patterns look eerily similar: the expense-versus-profit charts of today's AI companies mirror those of the dot-com companies.
+
+What do *you* think will happen with AI? Let me know in the comments below. Do you think it will be this drastic, or do you think it will barely matter?
+
+<script src="https://giscus.app/client.js"
+        data-repo="tanayseven/tanayseven.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyOTAyNjM1OA=="
+        data-category="General"
+        data-category-id="DIC_kwDOAbroNs4COT7e"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="dark"
+        data-lang="en"
+        data-loading="lazy"
+        crossOrigin="anonymous"
+        async>
+</script>
+
